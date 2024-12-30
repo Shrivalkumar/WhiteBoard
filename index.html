@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- tools section   -->
+        <div class="tools-bar">
+            <button class="open-tools">
+                <img src="image copy.png" class="open">
+                <img src="image copy 2.png" class="close">
+            </button>
+
+            <div class="tools">
+
+                <!-- here are the tools like pen ,eraseer and etcss.. -->
+
+
+
+                <!-- pen -->
+                <button class="tool-btn pen" id="pen">
+                    <span><img src="image copy 3.png"></span>
+                   <img src="image copy 10.png" class="arrow-down">
+                </button>
+            <!-- This is the dropdown for the pen with different functionality of different colors and width of the pen and different kinds of pen -->
+                <div id="pen-dropdown" class="dropdown">
+                    <div class="dropdown-items">
+                        <input type="range" id="pen-width" min="1" max="100" step="1" value="3">
+                        <span id="pen-width-value" style="display: none;">3</span>
+                    </div>
+                    <div class="dropdown-items">
+                        <button class="color-switch selected-color" style="background: #000000;" data-color="#000000"></button>
+                        <button class="color-switch" style="background: #FF0000;" data-color="#FF0000"></button>
+                        <button class="color-switch" style="background: #00FF00;" data-color="#00FF00"></button>
+                        <button class="color-switch" style="background: #0000FF;" data-color="#0000FF"></button>
+                        <button class="color-switch" style="background: #FFFFFF;" data-color="#FFFFFF"></button>
+                        <button class="color-switch" style="background: #FFFF00;" data-color="#FFFF00"></button>
+                        <button class="color-switch" style="background: #00FFFF;" data-color="#00FFFF"></button>
+                    </div>
+
+                    <div class="dropdown-items-btn">
+                        <button class="other-pens" id="pen"><img height="15px" src="image copy 11.png">Pen</button>
+                        <button class="other-pens" id="pointer"><img height="15px" src="image copy 12.png">Pointer</button>
+                        <button class="other-pens" id="highlighter"><img height="15px" src="image copy 13.png">Highlighter</button>
+                    </div>
+
+                </div>
+
+                <!-- Pen drop down ends here -->
+
+
+
+                <!-- Eraser -->
+                 <button class="tool-btn eraser" id="eraser">
+                    <span><img src="image copy 4.png"></span>
+                 </button>
+
+                <!-- Erase-All -->
+                  <button class="tool-btn erase-all" id="erase-all">
+                    <span><img src="image copy 5.png"></span>
+                  </button>
+
+                <!-- Undo -->
+                 <button class="tool-btn undo" id="undo">
+                    <span><img src="image copy 7.png"></span>
+                 </button>
+
+                <!-- mic  -->
+                 <button class="dual-tool-btn" id="mic-toggle">
+                    <img src="image copy 8.png" class="mic-on" title="Mute">
+                    <img src="image copy 9.png" class="mic-off" title="Unmute">
+                 </button>
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+        <!-- Main content is the whiteBoard Area here -->
+         <div class="main-area">
+            <!-- Content-Section -->
+             <div class="content-section">
+                <canvas id="whiteBoard"></canvas>
+             </div>
+
+         </div>
+
+
+    </div>
+
+
+    
+</body>
+<script src="script.js"></script>
+<script src="functions.js"></script>
+
+
+
+</html>

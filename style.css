@@ -1,0 +1,293 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+/* we can make a root where we can define the colors and fonts for the whole website */
+:root {
+    --body-color:#F0F3F4;
+    --primary-color:#DFE6E9;
+    --yellow-color:#FFF000;
+    --text-color:#000;
+    --btn-color: #DEE6E9;
+
+
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--body-color);
+    color: var(--text-color);
+
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height :100%;
+    width:100%;
+    position: relative;
+}
+
+.tools-bar{
+    width: 100%;;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 3px;
+    margin-top: 1rem;
+    /* position: absolute; */
+    bottom: 8px;
+    z-index: 1;
+   
+
+
+}
+.open-tools{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: center;
+ border: none;
+ cursor: pointer;
+ width: 3vw;
+ height: 3vw;
+ border-radius: 0 1rem 1rem 0;
+ background: var(--btn-color);
+ padding: 0.7rem;
+ box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+ transition: 0.1s all ease-in;
+}
+
+.open-tools:active{
+    transform: scale(1.13);
+}
+
+.open-tools img{
+   width: 100%;
+   height: 100%;
+   user-select: none;
+   cursor: pointer;
+
+}
+
+.open-tools img.open{
+    display:none;
+}
+
+.tools{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    justify-content: start;
+    border-radius: 1rem;
+    width: 100%;
+    margin: 0 0.5rem;
+}
+
+.tool-btn,.dual-tool-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--body-color);
+
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-btn:hover,.dual-tool-btn:hover{
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.15)
+}
+
+
+.tool-btn img,.dual-tool-btn img{
+    width: 20px;
+    height: 20px;
+    user-select: none;
+}
+
+.tool-btn i{
+    margin-left: 8px;
+    font-size: 16px;
+    color: #34495E;
+
+}
+
+.dual-tool-btn .mic-off{
+    display: none;
+}
+
+
+.dropdown{
+    display: none;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    position: absolute;
+    bottom: 60px;
+    gap: 10px;
+    padding: 5px;
+    border-radius: 0.5rem;
+    width: 250px;
+    background: var(--primary-color);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+
+.dropdown-items{
+    background: var(--body-color);
+    border-radius: 0.5rem;
+    padding: 0.8rem 0.2rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 0.3rem;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    width: 100%;
+
+}
+
+#pen-width{
+    width: 200px;
+    margin: 0 10px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: #DDD;
+    border-radius: 5px;
+    outline: none;
+    transition: background 0.3s ease;
+
+
+}
+
+#pen-width::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--text-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#pen-width::moz ::-moz-range-thumb{
+    width: 20px;
+    height: 20px;
+    background: var(--text-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.color-switch{
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+
+.selected-color{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.selected-pen{
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+.dropdown-items-btn{
+    background: var(--body-color);
+    padding: 0.1rem;
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+}
+
+.other-pens{
+    background: var(--btn-color);
+    width: 100%;
+    border: none;
+    padding: 0.6rem;
+    box-shadow: 0px 2px 4px 0.2px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+
+.main-area{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex: 1;
+    height: 100%;
+    /* background-color: green; */
+}
+
+.content-section{
+    flex: 3;
+    /* height: 80%; */
+    position: relative;
+    /* background-color: blue; */
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    overflow: hidden;
+    height: 100%;
+
+
+}
+
+/* now we are going to design the whiteBoard */
+
+#whiteBoard{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    /* background-color: blue; */
+}
+
+
+
+.penCursor{
+    cursor: url('image copy 11.png') , auto;
+}
+
+
+.pointerCursor{
+    cursor: url('image copy 12.png') , auto;
+}
+
+.highlighterCursor{
+    cursor: url('image copy 13.png') , auto;
+}
+
+
+
+
+
+
+
+
